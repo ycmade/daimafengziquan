@@ -61,6 +61,7 @@ let wait = ms => new Promise(resolve => setTimeout(resolve, ms));
         $.nickName = '';
         message = '';
         await jdCar();
+		await showMsg();
       }
     }
 })()
