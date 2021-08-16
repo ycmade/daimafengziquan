@@ -94,8 +94,8 @@ function exchange() {
           console.log(data);
           if (safeGet(data)) {
             data = JSON.parse(data);;
-            console.log(`【百亿补贴15减8优惠券抢券结果】${JSON.stringify(data)}\n`);
-			notify.sendNotify($.name, `京东账号  ${$.nickName || $.UserName}\n【百亿补贴15减8优惠券抢券结果】${JSON.stringify(data)}`);
+            console.log(`【百亿补贴15减8优惠券抢券结果】${JSON.stringify(data.subCodeMsg)}\n`);
+			notify.sendNotify($.name, `京东账号  ${$.nickName || $.UserName}\n【百亿补贴15减8优惠券抢券结果】${JSON.stringify(data.subCodeMsg)}`);
           }
         }
       } catch (e) {
