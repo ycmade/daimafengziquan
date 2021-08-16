@@ -78,7 +78,7 @@ async function jdCar() {
 function showMsg() {
   return new Promise(resolve => {
     $.msg($.name, '', `【京东账号${$.index}】${$.nickName}\n${message}`);
-    resolve()
+    resolve('');
   })
 }
 
@@ -100,7 +100,7 @@ function exchange() {
       } catch (e) {
         $.logErr(e, resp)
       } finally {
-        resolve();
+        resolve('');
       }
     })
   })
@@ -165,7 +165,7 @@ function TotalBean() {
       } catch (e) {
         $.logErr(e, resp)
       } finally {
-        resolve();
+        resolve('');
       }
     })
   })
