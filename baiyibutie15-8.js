@@ -77,10 +77,12 @@ async function jdCar() {
 }
 
 function showMsg() {
-  return new Promise(resolve => {
-    $.msg($.name, '', `【京东账号${$.index}】${$.nickName}\n${message}`);
-    resolve()
-  })
+   if (!jdNotify || jdNotify === 'false') {
+    $.msg($.name, ``, `【京东账号${$.index}】${$.nickName}\n【抢券结果】${JSON.stringify(data)}`);
+  } else {
+    $.log(`\n【京东账号${$.index}】${$.nickName}\n【抢券结果】${JSON.stringify(data)}`);
+  }
+}
 }
 
 function exchange() {
