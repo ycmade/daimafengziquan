@@ -95,7 +95,7 @@ function exchange() {
           if (safeGet(data)) {
             data = JSON.parse(data);
             console.log(`【9.9特卖9减3优惠券抢券结果】${JSON.stringify(data)}\n`);
-			notify.sendNotify(`\n京东账号：${$.nickName}\n【9.9特卖9减3优惠券抢券结果】${$.data}`);
+			notify.sendNotify($.name, `京东账号 ${$.index} ${$.nickName || $.UserName}\n【9.9特卖9减3优惠券抢券结果】${JSON.stringify(data)}`);
           }
         }
       } catch (e) {
