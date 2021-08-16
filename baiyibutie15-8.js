@@ -93,9 +93,9 @@ function exchange() {
           console.log(moment().format("YYYY-MM-DD HH:mm:ss.SSS"));
           console.log(data);
           if (safeGet(data)) {
-            data = JSON.parse(data);
+            data = JSON.parse(data);;
             console.log(`抢券结果：${JSON.stringify(data)}\n`);
-			notify.sendNotify(`抢券结果：${JSON.stringify(data)}\n`);
+			notify.sendNotify(`\n【京东账号${$.index}】${$.nickName}\n【百亿补贴15-8优惠券抢券结果】${JSON.stringify(data)}`);
           }
         }
       } catch (e) {
