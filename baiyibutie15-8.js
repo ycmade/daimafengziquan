@@ -61,7 +61,6 @@ let wait = ms => new Promise(resolve => setTimeout(resolve, ms));
         $.nickName = '';
         message = '';
         await jdCar();
-		await showMsg();
       }
     }
 })()
@@ -78,7 +77,7 @@ async function jdCar() {
 
 function showMsg() {
   return new Promise(resolve => {
-    $.msg($.name, '', `抢券结果：${JSON.stringify(data)}\n`);
+    $.msg($.name, '', `【京东账号${$.index}】${$.nickName}\n${message}`);
     resolve()
   })
 }
@@ -95,7 +94,8 @@ function exchange() {
           console.log(data);
           if (safeGet(data)) {
             data = JSON.parse(data);
-            console.log(`抢券结果：${JSON.stringify(data)}\n`)
+            console.log(`抢券结果：${JSON.stringify(data)}\n`);
+			await notify.sendNotify(`抢券结果：${JSON.stringify(data)}\n`);
           }
         }
       } catch (e) {
