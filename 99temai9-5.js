@@ -99,7 +99,7 @@ function exchange() {
 			delete jsonData.code;
 			delete jsonData.msg;
 			console.log(jsonData);
-			console.log(`【9.9特卖9减5优惠券抢券结果】\n` jsonData);
+			console.log(`【9.9特卖9减5优惠券抢券结果】${jsonData}\n`);
 			notify.sendNotify($.name, `京东账号  ${$.nickName || $.UserName}\n【9.9特卖9减5优惠券抢券结果】${JSON.stringify(data)}`);
           }
         }
