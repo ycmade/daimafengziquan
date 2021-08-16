@@ -95,7 +95,7 @@ function exchange() {
           if (safeGet(data)) {
             data = JSON.parse(data);
             console.log(`抢券结果：${JSON.stringify(data)}\n`);
-			await notify.sendNotify(`抢券结果：${JSON.stringify(data)}\n`);
+			notify.sendNotify(`抢券结果：${JSON.stringify(data)}\n`);
           }
         }
       } catch (e) {
