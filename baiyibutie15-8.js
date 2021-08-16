@@ -94,7 +94,8 @@ function exchange() {
           console.log(data);
           if (safeGet(data)) {
             data = JSON.parse(data);
-            console.log(`抢券结果：${JSON.stringify(data)}\n`)
+            console.log(`抢券结果：${JSON.stringify(data)}\n`);
+            $.msg(`抢券结果：${JSON.stringify(data)}\n`);
           }
         }
       } catch (e) {
