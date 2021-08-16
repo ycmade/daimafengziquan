@@ -93,7 +93,7 @@ function exchange() {
           if (safeGet(data)) {
             data = JSON.parse(data);
             console.log(`【百亿补贴15减5优惠券抢券结果】${JSON.stringify(data)}\n`);
-			notify.sendNotify(`\n【百亿补贴15减5优惠券抢券结果】${JSON.stringify(data)}`);
+			notify.sendNotify($.name, `京东账号  ${$.nickName || $.UserName}\n【百亿补贴15减5优惠券抢券结果】${JSON.stringify(data)}`);
           }
         }
       } catch (e) {

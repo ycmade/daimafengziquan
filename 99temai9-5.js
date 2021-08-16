@@ -94,10 +94,8 @@ function exchange() {
           console.log(data);
           if (safeGet(data)) {
             data = JSON.parse(data);
-			var jsonobj = JSON.parse(data);;
-			var taskId = getJsonValue(jsonobj,"subCodeMsg");
-			console.log(taskId);
-			notify.sendNotify($.name, `京东账号  ${$.nickName || $.UserName}\n【9.9特卖9减5优惠券抢券结果】$.taskId`);
+            console.log(`【9.9特卖9减3优惠券抢券结果】${JSON.stringify(data)}\n`);
+			notify.sendNotify($.name, `京东账号  ${$.nickName || $.UserName}\n【9.9特卖9减3优惠券抢券结果】${JSON.stringify(data)}`);
           }
         }
       } catch (e) {
