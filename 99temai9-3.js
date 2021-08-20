@@ -30,7 +30,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let jdNotify = false;//是否关闭通知，false打开通知推送，true关闭通知推送
-const randomCount = $.isNode() ? 1 : 1;//运行2次。相隔1秒一次
+const randomCount = $.isNode() ? 3 : 1;//运行2次。相隔1秒一次
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 if ($.isNode()) {
@@ -95,7 +95,7 @@ function exchange() {
           if (safeGet(data)) {
             data = JSON.parse(data);
             console.log(`【9.9特卖9减3优惠券抢券结果】${JSON.stringify(data.subCodeMsg)}\n`);
-			//notify.sendNotify($.name, `京东账号  ${$.nickName || $.UserName}\n【9.9特卖9减3优惠券抢券结果】${JSON.stringify(data.subCodeMsg)}`);
+			notify.sendNotify($.name, `京东账号  ${$.nickName || $.UserName}\n【9.9特卖9减3优惠券抢券结果】${JSON.stringify(data.subCodeMsg)}`);
           }
         }
       } catch (e) {
