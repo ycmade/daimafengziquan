@@ -30,7 +30,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let jdNotify = true;//是否关闭通知，false打开通知推送，true关闭通知推送
-const randomCount = $.isNode() ? 1 : 1;//运行1次。相隔1秒一次
+const randomCount = $.isNode() ? 3 : 1;//运行1次。相隔1秒一次
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 if ($.isNode()) {
@@ -97,7 +97,7 @@ function exchange() {
             console.log(`【补贴节9.9减8优惠券抢券结果】${JSON.stringify(data.subCodeMsg)}\n`);
 			//自行添加通知项目开始
 			var str="{"+data.subCodeMsg+"}";
-			 if(str.indexOf('China') !=-1){
+			if(str.indexOf('China') !=-1){
 				notify.sendNotify($.name, `京东账号  ${$.nickName || $.UserName}\n【补贴节9.9减8优惠券抢券结果】${JSON.stringify(data.subCodeMsg)}`);
 				}
 			//自行添加通知项目结束
