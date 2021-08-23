@@ -96,12 +96,9 @@ function exchange() {
             data = JSON.parse(data);
             console.log(`【补贴节9.9减8优惠券抢券结果】${JSON.stringify(data.subCodeMsg)}\n`);
 			//自行添加通知项目开始
-			var str = JSON.parse(data);
-			var reg = RegExp(/3/);
-			if(str.match(reg)){
-			//包含；	
-			notify.sendNotify($.name, `京东账号  ${$.nickName || $.UserName}\n【补贴节9.9减8优惠券抢券结果】${JSON.stringify(data.subCodeMsg)}`);
-			}
+			if(data.indexOf('领取成功') !=-1){
+				notify.sendNotify($.name, `京东账号  ${$.nickName || $.UserName}\n【补贴节9.9减8优惠券抢券结果】${JSON.stringify(data.subCodeMsg)}`);
+				}
 			//自行添加通知项目结束
 			//notify.sendNotify($.name, `京东账号  ${$.nickName || $.UserName}\n【补贴节9.9减8优惠券抢券结果】${JSON.stringify(data.subCodeMsg)}`);
           }
