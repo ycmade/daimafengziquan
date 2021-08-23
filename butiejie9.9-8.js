@@ -96,7 +96,8 @@ function exchange() {
             data = JSON.parse(data);
             console.log(`【补贴节9.9减8优惠券抢券结果】${JSON.stringify(data.subCodeMsg)}\n`);
 			//自行添加通知项目开始
-			if(data.indexOf('领取成功') !=-1){
+			var str= ${JSON.stringify(data.subCodeMsg)};
+			if(str.indexOf('领取成功') !=-1){
 				notify.sendNotify($.name, `京东账号  ${$.nickName || $.UserName}\n【补贴节9.9减8优惠券抢券结果】${JSON.stringify(data.subCodeMsg)}`);
 				}
 			//自行添加通知项目结束
