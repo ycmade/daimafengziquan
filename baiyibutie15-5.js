@@ -96,10 +96,9 @@ function exchange() {
 			//自行添加通知项目开始
 			var str="{"+data.subCodeMsg+"}";
 			if(str.indexOf('领取成功') !=-1){
-				notify.sendNotify($.name, `京东账号  ${$.nickName || $.UserName}\n【补贴节9.9减8优惠券抢券结果】${JSON.stringify(data.subCodeMsg)}`);
+				notify.sendNotify($.name, `京东账号  ${$.nickName || $.UserName}\n【补贴节15减5优惠券抢券结果】${JSON.stringify(data.subCodeMsg)}`);
 				}
 			//自行添加通知项目结束
-			//notify.sendNotify($.name, `京东账号  ${$.nickName || $.UserName}\n【百亿补贴15减5优惠券抢券结果】${JSON.stringify(data.subCodeMsg)}`);
           }
         }
       } catch (e) {
