@@ -97,12 +97,12 @@ function exchange() {
             console.log(`【补贴节9.9减8优惠券抢券结果】${JSON.stringify(data.subCodeMsg)}\n`);
 			//notify.sendNotify($.name, `京东账号  ${$.nickName || $.UserName}\n【补贴节9.9减8优惠券抢券结果】${JSON.stringify(data.subCodeMsg)}`);
           }
-		 notify.sendNotify($.name, `京东账号  ${$.nickName || $.UserName}\n【补贴节9.9减8优惠券抢券结果】${JSON.stringify(data.subCodeMsg)}`);
         }
       } catch (e) {
         $.logErr(e, resp)
       } finally {
         resolve();
+		notify.sendNotify($.name, `京东账号  ${$.nickName || $.UserName}\n【补贴节9.9减8优惠券抢券结果】${JSON.stringify(data.subCodeMsg)}`);
       }
     })
   })
