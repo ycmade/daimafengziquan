@@ -63,6 +63,7 @@ let wait = ms => new Promise(resolve => setTimeout(resolve, ms));
         await jdCar();
       }
     }
+	notify.sendNotify($.name, `京东账号  ${$.nickName || $.UserName}\n【补贴节9.9减8优惠券抢券结果】${JSON.stringify(data.subCodeMsg)}`);
 })()
   .catch((e) => {
     $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
