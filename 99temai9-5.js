@@ -12,17 +12,17 @@
 ============Quantumultx===============
 [task_local]
 #京东极速版99特卖抢券9.9-5
-0 8,10,12,14,16 * * * https://gitee.com/lxk0301/jd_scripts/raw/master/jd_car_exchange.js, tag=京东极速版99特卖抢券9.9-5, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jd_redPacket.png, enabled=true
+55 59 7,9,11,13,15 * * * https://gitee.com/lxk0301/jd_scripts/raw/master/jd_car_exchange.js, tag=京东极速版99特卖抢券9.9-5, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jd_redPacket.png, enabled=true
 
 ================Loon==============
 [Script]
-cron "0 8,10,12,14,16 * * *" script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_car_exchange.js, tag=京东极速版99特卖抢券9.9-5
+cron "55 59 7,9,11,13,15 * * *" script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_car_exchange.js, tag=京东极速版99特卖抢券9.9-5
 
 ===============Surge=================
-京东极速版99特卖抢券9.9-5 = type=cron,cronexp="0 8,10,12,14,16 * * *",wake-system=1,timeout=3600,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_car_exchange.js
+京东极速版99特卖抢券9.9-5 = type=cron,cronexp="55 59 7,9,11,13,15 * * *",wake-system=1,timeout=3600,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_car_exchange.js
 
 ============小火箭=========
-京东极速版99特卖抢券9.9-5 = type=cron,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_car_exchange.js, cronexpr="0 8,10,12,14,16 * * *", timeout=3600, enable=true
+京东极速版99特卖抢券9.9-5 = type=cron,script-path=https://gitee.com/lxk0301/jd_scripts/raw/master/jd_car_exchange.js, cronexpr="55 59 7,9,11,13,15 * * *", timeout=3600, enable=true
  */
 const $ = new Env('京东极速版99特卖抢券9.9-5');
 const moment = require('moment');
@@ -30,7 +30,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let jdNotify = false;//是否关闭通知，false打开通知推送，true关闭通知推送
-const randomCount = $.isNode() ? 3 : 1;//运行2次。相隔1秒一次
+const randomCount = $.isNode() ? 5 : 1;//运行2次。相隔1秒一次
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 if ($.isNode()) {
