@@ -50,11 +50,11 @@ def getckitem(searchValue, value):
 
 def wstopt(cookies):
     headers = {
-        'user-agent': 'okhttp/3.12.1;jdmall;android;version/10.1.2;build/89743;screen/1080x2293;os/11;network/wifi;',
+        'user-agent': 'JD4iPhone/167802 (iPhone; iOS 14.7.1; Scale/3.00)',
         'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
         'Cookie': cookies,
     }
-    url = 'https://api.m.jd.com/client.action?functionId=genToken&clientVersion=10.1.2&build=89743&client=android' \
+    url = 'https://api.m.jd.com/client.action?functionId=genToken&clientVersion=10.1.2&build=167802&client=apple' \
           '&d_brand=&d_model=&osVersion=&screen=&partner=&oaid=&openudid=a27b83d3d1dba1cc&eid=&sdkVersion=30&lang' \
           '=zh_CN&uuid=a27b83d3d1dba1cc&aid=a27b83d3d1dba1cc&area=19_1601_36953_50397&networkType=wifi&wifiBssid=&uts' \
           '=&uemps=0-2&harmonyOs=0&st=1630413012009&sign=ca712dabc123eadd584ce93f63e00207&sv=121'
@@ -82,12 +82,12 @@ def wstopt(cookies):
 
 def checkcookie(cookies):
     try:
-        url = 'https://api.m.jd.com/client.action?functionId=newUserInfo&clientVersion=10.0.9&client=android&openudid' \
+        url = 'https://api.m.jd.com/client.action?functionId=newUserInfo&clientVersion=10.1.2&client=apple&openudid' \
               '=a27b83d3d1dba1cc&uuid=a27b83d3d1dba1cc&aid=a27b83d3d1dba1cc&area=19_1601_36953_50397&st' \
               '=1626848394828&sign=447ffd52c08f0c8cca47ebce71579283&sv=101&body=%7B%22flag%22%3A%22nickname%22%2C' \
               '%22fromSource%22%3A1%2C%22sourceLevel%22%3A1%7D&'
         headers = {
-            'user-agent': 'okhttp/3.12.1;jdmall;android;version/10.0.9;build/89099;screen/1080x2293;os/11;network/wifi;'
+            'user-agent': 'JD4iPhone/167802 (iPhone; iOS 14.7.1; Scale/3.00)'
         }
         response = requests.post(url=url, headers=headers, cookies=cookies, verify=False)
         data = response.json()
